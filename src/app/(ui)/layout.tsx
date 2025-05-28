@@ -1,4 +1,7 @@
+import { NavItem } from "@/components/nav/nav-item";
+import { NavProfile } from "@/components/nav/nav-profile";
 import { Logo } from "@/components/ui/logo";
+import { user } from "@/data/user";
 import { ReactNode } from "react";
 
 type Props = {
@@ -8,9 +11,31 @@ type Props = {
 export default function Layout({ children }: Props) {
     return(
         <main className="bg-white rounded-2xl min-h-screen flex justify-center mx-auto max-w-7xl">
-            <section className="hidden lg:flex flex-col sticky top-0 h-screen w-72 px-3 border-r-2 border-neutral-200">
+            <section className="hidden lg:flex flex-col sticky top-0 h-screen w-96 px-8 border-r-2 border-neutral-200">
                 <div className="flex-1 mt-6">
                     <Logo size={100} />
+                    <div className="mt-11 mr-1">
+                        <NavProfile />
+                    </div>
+                    <div className="mt-5 flex flex-col overflow-hidden">
+                        <NavItem href="/home" label="Página inicial" icon="/icons/home.svg" size={30} />
+                        <NavItem href="/notifications" label="Notificações" icon="/icons/bell.svg" size={30} />
+                        <NavItem href={`/${user.slug}`} label="Meu perfil" icon="/icons/user.svg" size={30} />
+                        <NavItem href="/messages" label="Mensagens" icon="/icons/message-circle.svg" size={30} />
+                        <NavItem href="/publish" label="Publicar" icon="/icons/plus-square.svg" size={30} />
+                        <NavItem href="/search" label="Buscar" icon="/icons/search.svg" size={30} />
+                        <NavItem href="/settings" label="Configurações" icon="/icons/settings.svg" size={30} />
+                    </div>
+                </div>
+                <div className="flex border-t-2 border-neutral-200 pt-6 justify-center items-center mb-5">
+                    <ul className="flex font-medium opacity-75 text-center flex-wrap text-[13px] gap-3">
+                        <li><a href="/about" className="hover:underline">Sobre</a></li>
+                        <li><a href="/help" className="hover:underline">Ajuda</a></li>
+                        <li><a href="/privacy" className="hover:underline">Privacidade</a></li>
+                        <li><a href="/terms" className="hover:underline">Termos</a></li>
+                        <li><a href="/publicy" className="hover:underline">Publicidade</a></li>
+                        <li><a href="/services" className="hover:underline">Serviços corporativos</a></li>
+                    </ul>
                 </div>
             </section>
             <section className="flex-1 max-w-lg">{children}</section>
