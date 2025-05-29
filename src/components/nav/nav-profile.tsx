@@ -14,14 +14,16 @@ export const NavProfile = () => {
                 </Link>
             </div>
             <div className="flex-1 flex justify-center flex-col items-center gap-1 mt-4 overflow-hidden">
-                <Link href={`/${user.slug}`} className="text-lg text-center justify-center flex items-center gap-1 font-semibold">
-                    <p className="w-50 truncate">{user.name}</p>
-                </Link>
-                <div className="text-md font-medium opacity-60">@{user.slug}</div>
+                <div className="flex justify-center flex-col items-center">
+                    <Link href={`/${user.slug}`} className="text-lg text-center justify-center flex items-center gap-1 font-semibold">
+                        <p className="w-50 truncate">{user.name}</p>
+                    </Link>
+                    <div className="text-md font-medium opacity-60">@{user.slug}</div>
+                </div>
                 <div>
                     {user.verified &&
                         <div className="flex items-center gap-1">
-                            <span className="font-semibold text-sm opacity-50">Verificado</span>
+                            <span className="font-semibold text-sm opacity-50 select-none">Verificado</span>
                             <img src="https://static.vecteezy.com/system/resources/thumbnails/047/309/918/small_2x/verified-badge-profile-icon-png.png" alt="verified-icon" width={17}/>
                         </div>
                     }
