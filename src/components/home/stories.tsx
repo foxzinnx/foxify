@@ -57,7 +57,7 @@ export const Stories = () => {
     };
     
     return (
-        <div className="mt-4 relative border-b-2 pb-3 border-neutral-200">
+        <div className="mt-4 relative border-b-2 pb-3 border-neutral-200/50">
             {canScrollLeft && (
                 <div className="hidden drop-shadow-md lg:flex absolute top-5 px-3 z-10">
                     <img 
@@ -93,21 +93,36 @@ export const Stories = () => {
                 }}
             >
                 <div className="flex col-span-2">
-                    <div className="flex flex-col items-center gap-1 min-w-[5rem] flex-shrink-0">
-                        <Link href={'/story/publish'} className="group">
-                            <div className="w-16 flex justify-center items-center h-16 object-cover rounded-full border-3 p-[1px] border-[rgb(241,159,60)]">
-                                <img src="/icons/plus.svg" alt="" className="w-9 transition-all group-hover:scale-110 group-hover:rotate-360 duration-500 object-cover"/>
+                    <div className="flex pl-1 flex-col items-center gap-2 min-w-[5rem] flex-shrink-0">
+                        <Link href={'/story/publish'} className="group group inline-block p-[2px] rounded-full transition-all duration-500 bg-gradient-to-r from-[#FF7A00] via-[#FF7D09] to-[#FFD600] hover:bg-gradient-to-l"
+                            style={{
+                                padding: '2px',
+                                borderRadius: '9999px',
+                                background: 'linear-gradient(to right, #FF7A00, #FF7D09, #FFD600)',
+                                display: 'inline-block'
+                            }}
+                        
+                        >
+                            <div className="w-16 flex justify-center items-center h-16 object-cover rounded-full border-2 border-white p-[1px]">
+                                <img src="/icons/plus.svg" alt="" className="w-9 transition-all group-hover:scale-110 group-hover:rotate-360 duration-500 object-cover filter invert"/>
                             </div>
                         </Link>
                         <span className="text-sm text-center truncate w-24 font-medium">Seu story</span>
                     </div>
                     {users.map((user, index) => (
-                        <div key={index} className="flex flex-col items-center gap-1 min-w-[5rem] flex-shrink-0">
-                            <Link href={`${user.slug}/storys`} className="">
+                        <div key={index} className="flex flex-col items-center gap-2 min-w-[5rem] flex-shrink-0">
+                            <Link href={`${user.slug}/storys`} className=""
+                                style={{
+                                    padding: '2px',
+                                    borderRadius: '9999px',
+                                    background: 'linear-gradient(to right, #FF7A00, #FF7D09, #FFD600)',
+                                    display: 'inline-block'
+                                }}
+                            >
                                 <img
                                     src={user.avatar}
                                     alt={`${user.slug} avatar`}
-                                    className="w-16 object-cover rounded-full border-3 p-[1px] border-[rgb(241,159,60)]"
+                                    className="w-16 object-cover rounded-full p-[1px]"
                                 />
                             </Link>
                             <span className="text-sm text-center truncate w-24 font-medium">{user.slug}</span>

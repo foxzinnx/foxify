@@ -17,7 +17,7 @@ export const NavItem = ({ label, icon, href, active, size }: Props) => {
     return(
         <Link href={href} className={`flex items-center gap-4 group rounded-2xl px-4 py-3 transition-all duration-200 ${active || isMe ? 'opacity-100' : 'opacity-60'} hover:opacity-100`}>
             <img src={icon} width={size}/>
-            <div className={`text-[17px] font-medium group-hover:font-semibold ${active || isMe ? 'font-semibold' : 'font-medium'}`}>{label}</div>
+            <div id="nav-label" className={`text-[17px] font-medium group-hover:font-semibold ${active || isMe ? 'font-semibold' : 'font-medium'}`}>{label}</div>
         </Link>
     );
 }
