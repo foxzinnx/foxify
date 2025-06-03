@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type Props = {
-    label: string;
+    label?: string;
     icon: string;
     href: string;
     active?: boolean;
