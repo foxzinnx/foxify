@@ -12,12 +12,12 @@ export const NavTabs = () => {
 
   return (
     <div className="bg-white px-4 py-2">       
-      <div className="flex bg-gray-100 rounded-full p-1">
+      <div className="flex h-12 bg-gray-100 rounded-xl p-[3px]">
         <button
           onClick={() => handleTabClick('/home')}
-          className={`flex-1 cursor-pointer py-3 px-6 rounded-full text-sm font-medium transition-all duration-200 ${
+          className={`flex-1 cursor-pointer py-3 px-6 rounded-sm text-sm font-medium transition-all duration-200 ${
             currentRoute === '/home'
-              ? 'bg-orange-500 text-white'
+              ? 'border-b-3 border-b-orange-400 text-black font-semibold'
               : 'text-gray-600 hover:text-gray-800'
           }`}
         >
@@ -26,9 +26,9 @@ export const NavTabs = () => {
 
         <button
           onClick={() => handleTabClick('/trending')}
-          className={`flex-1 cursor-pointer py-3 px-6 rounded-full text-sm font-semibold transition-all duration-200 ${
+          className={`flex-1 cursor-pointer py-3 px-6 rounded-sm text-sm font-medium transition-all duration-200 ${
             currentRoute === '/trending'
-              ? 'bg-blue-500 text-white'
+              ? 'border-b-3 border-b-orange-400 text-black font-semibold'
               : 'text-gray-600 hover:text-gray-800'
           }`}
         >

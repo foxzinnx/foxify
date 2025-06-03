@@ -94,15 +94,7 @@ export const Stories = () => {
             >
                 <div className="flex col-span-2">
                     <div className="flex pl-1 flex-col items-center gap-2 min-w-[5rem] flex-shrink-0">
-                        <Link href={'/story/publish'} className="group group inline-block p-[2px] rounded-full transition-all duration-500 bg-gradient-to-r from-[#FF7A00] via-[#FF7D09] to-[#FFD600] hover:bg-gradient-to-l"
-                            style={{
-                                padding: '2px',
-                                borderRadius: '9999px',
-                                background: 'linear-gradient(to right, #FF7A00, #FF7D09, #FFD600)',
-                                display: 'inline-block'
-                            }}
-                        
-                        >
+                        <Link href={'/story/publish'} className="group group inline-block p-[2px] rounded-full transition-all duration-500 bg-gradient-to-r from-[#FF7A00] via-[#FF7D09] to-[#FFD600]">
                             <div className="w-16 flex justify-center items-center h-16 object-cover rounded-full border-2 border-white p-[1px]">
                                 <img src="/icons/plus.svg" alt="" className="w-9 transition-all group-hover:scale-110 group-hover:rotate-360 duration-500 object-cover filter invert"/>
                             </div>
@@ -111,14 +103,7 @@ export const Stories = () => {
                     </div>
                     {users.map((user, index) => (
                         <div key={index} className="flex flex-col items-center gap-2 min-w-[5rem] flex-shrink-0">
-                            <Link href={`${user.slug}/storys`} className=""
-                                style={{
-                                    padding: '2px',
-                                    borderRadius: '9999px',
-                                    background: 'linear-gradient(to right, #FF7A00, #FF7D09, #FFD600)',
-                                    display: 'inline-block'
-                                }}
-                            >
+                            <Link href={`${user.slug}/storys`} className="p-[2px] rounded-full inline-block bg-gradient-to-r from-orange-400 via-orange-400 to-yellow-400">
                                 <img
                                     src={user.avatar}
                                     alt={`${user.slug} avatar`}
