@@ -1,3 +1,4 @@
+import { HomeFeed } from "@/components/home/home-feed";
 import { MobileHeader } from "@/components/home/mobileheader";
 import { SearchBar } from "@/components/home/searchbar";
 import { Stories } from "@/components/home/stories";
@@ -14,6 +15,7 @@ export default function Page() {
             <NavTabs />
             <Stories />
             <SearchBar />
+            <HomeFeed />
         </div>
     );
 }

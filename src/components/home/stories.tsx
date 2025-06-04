@@ -57,9 +57,9 @@ export const Stories = () => {
     };
     
     return (
-        <div className="mt-4 relative border-b-2 pb-3 border-neutral-200/50">
+        <div className="bg-white rounded-md py-5 relative border-b-2 pb-3 border-neutral-200/50">
             {canScrollLeft && (
-                <div className="hidden drop-shadow-md lg:flex absolute top-5 px-3 z-10">
+                <div className="hidden drop-shadow-md lg:flex absolute top-10 px-3 z-10">
                     <img 
                         src="/icons/arrow-left-circle.svg" 
                         alt="Scroll Left" 
@@ -71,7 +71,7 @@ export const Stories = () => {
             )}
             
             {canScrollRight && (
-                <div className="hidden lg:flex absolute top-5 right-0 px-3 z-10">
+                <div className="hidden lg:flex absolute top-10 right-0 px-3 z-10">
                     <img 
                         src="/icons/arrow-right-circle.svg" 
                         alt="Scroll Right" 

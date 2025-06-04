@@ -3,7 +3,7 @@ import { Logo } from "../ui/logo";
 
 export const MobileHeader = () => {
     return(
-        <header className="flex md:hidden justify-between items-center px-4 mt-2 ">
+        <header className="bg-white flex md:hidden justify-between items-center px-4 py-2">
             <div>
                 <Logo size={100} />
             </div>
