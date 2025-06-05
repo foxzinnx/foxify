@@ -71,10 +71,10 @@ export const PostItem = ({ post }: Props) => {
                 </div>
                 <div className="py-3 text-[15px] font-regular">{post.body}</div>
                 {post.image &&
-                    <div className="w-full">
+                    <div className="w-full h-96 mb-4">
                         <img src={post.image}
                         alt=""
-                        className="w-full rounded-2xl"
+                        className="w-full rounded-2xl h-full object-cover border border-neutral-300"
                         />
                     </div>
                 }
