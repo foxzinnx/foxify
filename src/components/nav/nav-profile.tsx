@@ -2,6 +2,25 @@ import { user } from "@/data/user";
 import Link from "next/link";
 
 export const NavProfile = () => {
+
+    const formatFollowers = (count: number) => {
+        if (count >= 1_000_000){
+            return (count / 1_000_000).toLocaleString('pt-BR', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 1,
+            }) + 'M';
+        }
+
+        if(count >= 1_000){
+            return (count / 1_000).toLocaleString('pt-BR', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 1,
+            }) + 'k';
+        }
+
+        return count.toLocaleString('pt-BR');
+    }
+
     return(
         <div className="flex flex-col justify-center items-center">
             <div className="size-23 mr-2 rounded-full overflow-hidden">
@@ -34,7 +53,7 @@ export const NavProfile = () => {
                         <p className="font-medium text-[14px] opacity-70">Posts</p>
                     </div>
                     <div className="flex flex-col items-center">
-                        <span className="text-[17px] font-semibold">{user.followers.toLocaleString('pt-BR')}</span>
+                        <span className="text-[17px] font-semibold">{formatFollowers(user.followers)}</span>
                         <p className="font-medium text-[14px] opacity-70">Seguidores</p>
                     </div>
                     <div className="flex flex-col items-center">

@@ -39,7 +39,7 @@ export const PostItem = ({ post }: Props) => {
     }
 
     return(
-        <div className="bg-white p-5 flex gap-3 drop-shadow-xs rounded-xl">
+        <div className="bg-white p-5 flex gap-3 border border-neutral-200 drop-shadow-xs rounded-xl">
             <div>
                 <Link href={`/${post.user.slug}`}>
                     <img 
@@ -60,16 +60,16 @@ export const PostItem = ({ post }: Props) => {
                                     <img src="https://static.vecteezy.com/system/resources/thumbnails/047/309/918/small_2x/verified-badge-profile-icon-png.png" alt="" width={13} />
                                 }
                             </div>
-                            <div className="text-[13px] text-neutral-400">@{post.user.slug}</div>
+                            <div className="text-[13px] text-neutral-500">@{post.user.slug}</div>
                         </div>
 
                         <div className="cursor-pointer">
                             <img src="/icons/more-horizontal.svg" alt="" width={22}/>
                         </div>
                     </div>
-                    <div className="text-xs -mt-1 opacity-60">{formatRelativeTime(post.dataPost)}</div>
+                    <div className="text-[12.5px] -mt-1 opacity-60">{formatRelativeTime(post.dataPost)}</div>
                 </div>
-                <div className="py-3 text-[15px] font-regular">{post.body}</div>
+                <div className="py-3 text-[15px]">{post.body}</div>
                 {post.image &&
                     <div className="w-full h-96 mb-4">
                         <img src={post.image}
