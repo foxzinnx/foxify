@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Foxify",
-  description: "Foxify Network",
+  description: "Foxify Social",
 };
 
 export default function RootLayout({
