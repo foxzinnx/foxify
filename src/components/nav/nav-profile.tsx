@@ -4,7 +4,7 @@ import Link from "next/link";
 export const NavProfile = () => {
 
     const formatFollowers = (count: number) => {
-        if (count >= 1_000_000){
+        if (count >= 1_000_000) {
             return (count / 1_000_000).toLocaleString('pt-BR', {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 1,

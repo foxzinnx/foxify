@@ -42,6 +42,10 @@ body {
   font-family: 'Satoshi-Regular';
 }
 
+#segoe{
+  font-size: 'Segoe-ui';
+}
+
 @media only screen and (max-width: 1280px){
   #nav-profile {
     display: none;

@@ -1,22 +1,14 @@
-"use client"
+import { Welcome } from "@/components/ui/welcome";
 
-import { Logo } from "@/components/ui/logo";
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
+export const metadata = {
+  title: 'Bem-vindo à Foxify',
+};
 
 export default function Home() {
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      redirect('/home');
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <Logo size={150} />
+      <Welcome />
     </div>
   );
 }
