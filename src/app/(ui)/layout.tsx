@@ -46,7 +46,7 @@ export default function Layout({ children }: Props) {
                     </div>
                 </div>
             </section>
-            <section id="children-section" className="flex-1 md:mx-auto max-w-lg">
+            <section id="children-section" className="flex-1 md:mx-auto max-w-full">
                 {children}
             </section>
             <aside id="aside-right" className="bg-white rounded-lg hidden lg:flex flex-col gap-6 sticky top-0 h-screen w-96 px-8 py-6 border-l-2 border-neutral-200">DIREITA</aside>

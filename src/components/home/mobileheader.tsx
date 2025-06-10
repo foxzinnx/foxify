@@ -9,7 +9,7 @@ export const MobileHeader = () => {
             </div>
 
             <div>
-                <NavItem href="/notifications" icon="/icons/bell.svg" size={25} className="opacity-100"/>
+                <NavItem href="/notifications" icon="/icons/bell.svg" size={28} className="opacity-100"/>
             </div>
         </header>
     );

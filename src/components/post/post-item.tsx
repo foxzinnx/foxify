@@ -8,6 +8,7 @@ import { formatRelativeTime } from "@/utils/format.relative";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import useScrollLock from "@/hooks/useScrollLock";
 
 type Props = {
     post: Post;
@@ -45,6 +46,8 @@ export const PostItem = ({ post }: Props) => {
             setRepostCount(prev => prev + 1);
         }
     }
+
+    useScrollLock(imageModalOpen);
 
     const openImageModal = () => {
         setIsAnimating(false);
@@ -128,26 +131,28 @@ export const PostItem = ({ post }: Props) => {
             </div>
 
             {mounted && imageModalOpen && createPortal(
-                <div 
-                    className={`fixed inset-0 bg-black/50 bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-all duration-300 ease-out ${isAnimating ? 'bg-opacity-70 backdrop-blur-sm' : 'bg-opacity-0'}`}
-                    onClick={closeImageModal}
-                >
-                    <div className={`relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl max-h-[100vh] w-full mx-auto transition-all duration-300 ease-out ${isAnimating ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-4'}`}>
-                        <button
-                            onClick={closeImageModal}
-                            className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all"
-                        >
-                            <FontAwesomeIcon icon={faXmark} className="size-5 cursor-pointer" />
-                        </button>
+                <>
+                    <button
+                        onClick={closeImageModal}
+                        className="cursor-pointer fixed top-4 left-4 z-50 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all"
+                    >
+                        <FontAwesomeIcon icon={faXmark} className="size-6 cursor-pointer" />
+                    </button>
 
-                        <img
-                            src={post.image}
-                            alt=""
-                            className="max-w-full transition-all duration-300 max-h-full object-contain rounded-lg shadow-2xl"
-                            onClick={(e) => e.stopPropagation()}
-                        />
+                    <div 
+                        className={`fixed inset-0 bg-black/50 bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-40 p-4 transition-all duration-300 ease-out ${isAnimating ? 'bg-opacity-70 backdrop-blur-sm' : 'bg-opacity-0'}`}
+                        onClick={closeImageModal}
+                    >
+                        <div className={`relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl max-h-[100vh] w-full mx-auto transition-all duration-300 ease-out ${isAnimating ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-4'} grid place-items-center`}>
+                            <img
+                                src={post.image}
+                                alt=""
+                                className="max-w-full lg:fixed transition-all duration-300 max-h-full object-contain rounded-lg shadow-2xl lg:max-h-[95vh] lg:max-w-[90vw]"
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                        </div>
                     </div>
-                </div>,
+                </>,
                 document.body
             )}
         </div>
