@@ -11,7 +11,7 @@ export const NavTabs = () => {
   };
 
   return (
-    <div className="bg-white sticky top-0 z-5">       
+    <div className="bg-white sticky top-15 md:top-0 z-5">       
       <div className="flex h-12 rounded-md">
         <button
           onClick={() => handleTabClick('/home')}

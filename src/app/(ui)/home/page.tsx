@@ -1,4 +1,5 @@
 import { HomeFeed } from "@/components/home/home-feed";
+import { MobileNav } from "@/components/home/mobile-nav";
 import { MobileHeader } from "@/components/home/mobileheader";
 import { SearchBar } from "@/components/home/searchbar";
 import { Stories } from "@/components/home/stories";
@@ -11,6 +12,7 @@ export const metadata = {
 export default function Page() {
     return(
         <div>
+            <MobileNav />
             <MobileHeader />
             <NavTabs />
             <Stories />
