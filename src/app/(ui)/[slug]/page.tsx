@@ -84,11 +84,11 @@ export default function Page() {
                         <div>
                             {isMe && 
                                 <Link href={`/${user.slug}/edit`}>
-                                    <button className="cursor-pointer mt-5 bg-[#FF7A00] rounded-3xl text-white w-40 h-13">Editar perfil</button>
+                                    <button className="cursor-pointer mt-5 bg-[#FF7A00] rounded-3xl font-semibold text-white w-40 h-13">Editar perfil</button>
                                 </Link>
                             }
                             {!isMe &&
-                                <button className="cursor-pointer mt-5 bg-[#FF7A00] rounded-3xl text-white w-35 h-12">Seguir</button>
+                                <button className="cursor-pointer mt-5 bg-[#FF7A00] font-semibold rounded-3xl text-white w-35 h-12">Seguir</button>
                             }
                         </div>
                     </div>
