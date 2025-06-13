@@ -78,7 +78,7 @@ export const PostItem = ({ post }: Props) => {
                         <div className="w-full flex justify-between items-center">
                             <div className="flex flex-col justify-start items-start">
                                 <div className="flex items-center gap-1 font-semibold text-[15px]">
-                                    <Link href={`/${post.user.slug}`} className="">{post.user.name}</Link>
+                                    <Link href={`/@${post.user.slug}`} className="">{post.user.name}</Link>
                                     {user.verified && 
                                         <img src="https://static.vecteezy.com/system/resources/thumbnails/047/309/918/small_2x/verified-badge-profile-icon-png.png" alt="" width={13} />
                                     }

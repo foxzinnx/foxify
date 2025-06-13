@@ -11,7 +11,7 @@ type Props = {
 export default function Layout({ children }: Props) {
     return(
         <main id="main-layout" className="rounded-2xl min-h-screen flex justify-center mx-auto max-w-7xl">
-            <section id="left-side" className="bg-white rounded-lg hidden md:flex flex-col sticky top-0 h-screen w-96 px-8 border-r-2 border-neutral-200">
+            <section id="left-side" className="bg-white rounded-lg hidden md:flex flex-col sticky top-0 h-screen w-93 px-8 border-r-2 border-neutral-200">
                 <div className="flex-1 mt-6">
                     <div className="w-26">
                         <Logo size={100} />
