@@ -6,6 +6,9 @@ import { ProfileHeader } from "@/components/ui/profile-header";
 import { post } from "@/data/post";
 import { user } from "@/data/user";
 import { formatNums } from "@/utils/format.nums";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Metadata } from "next";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -44,14 +47,20 @@ export default function Page() {
     };
 
     return(
-        <div className="bg-white">
+        <div className="bg-white relative">
+
             <MobileNav />
+            <div className="absolute top-4 left-3 md:hidden">
+                <Link href={"/home"} className="flex justify-center items-center border-2 border-neutral-300 bg-black/70 size-11 rounded-full">
+                    <FontAwesomeIcon icon={faArrowLeft} className="size-5 text-white" />
+                </Link>
+            </div>
             <ProfileHeader backHref="/home">
                 <div className="font-semibold text-left truncate max-w-43 flex-none">{user.name}</div>
                 <div className="font-medium text-[14px]">{user.postCount} Posts</div>
             </ProfileHeader>
             <section className="">
-                <div className="bg-neutral-500 h-28 bg-no-repeat bg-cover bg-center" style={{backgroundImage: 'url('+user.cover+')'}}></div>
+                <div className="bg-neutral-500 h-33 bg-no-repeat bg-cover bg-center" style={{backgroundImage: 'url('+user.cover+')'}}></div>
                 <div className="-mt-7 flex flex-col justify-center items-center px-4">
                     <div className="h-[6.5rem] w-[6.5rem] drop-shadow-xs rounded-full">
                         <img src={user.avatar} alt={user.slug} className="w-full h-full rounded-full" />

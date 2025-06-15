@@ -147,7 +147,7 @@ export const PostItem = ({ post }: Props) => {
                             <img
                                 src={post.image}
                                 alt=""
-                                className="max-w-full lg:fixed transition-all duration-300 max-h-full object-contain rounded-lg shadow-2xl lg:max-h-[95vh] lg:max-w-[90vw]"
+                                className="max-w-full lg:fixed transition-all duration-300 max-h-full object-contain rounded-lg shadow-2xl lg:max-h-[100vh] lg:max-w-[90vw]"
                                 onClick={(e) => e.stopPropagation()}
                             />
                         </div>
