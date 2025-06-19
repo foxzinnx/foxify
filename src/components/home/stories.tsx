@@ -59,26 +59,30 @@ export const Stories = () => {
     return (
         <div className="bg-white rounded-md py-5 relative border-b-2 pb-3 border-neutral-200/50">
             {canScrollLeft && (
-                <div className="hidden drop-shadow-md lg:flex absolute top-10 px-3 z-10">
-                    <img 
-                        src="/icons/arrow-left-circle.svg" 
-                        alt="Scroll Left" 
-                        width={30} 
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                        onClick={scrollLeft}
-                    />
+                <div className="hidden drop-shadow-md lg:flex absolute top-10 px-3 z-3">
+                    <div className="bg-white rounded-full p-[3px] drop-shadow-md">
+                        <img 
+                            src="/icons/arrow-left-circle.svg" 
+                            alt="Scroll Left" 
+                            width={30} 
+                            className="cursor-pointer hover:opacity-80 transition-opacity"
+                            onClick={scrollLeft}
+                        />
+                    </div>
                 </div>
             )}
             
             {canScrollRight && (
-                <div className="hidden lg:flex absolute top-10 right-0 px-3 z-10">
-                    <img 
-                        src="/icons/arrow-right-circle.svg" 
-                        alt="Scroll Right" 
-                        width={30} 
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                        onClick={scrollRight}
-                    />
+                <div className="hidden lg:flex absolute top-10 right-0 px-3 z-3">
+                    <div className="bg-white rounded-full p-[3px] drop-shadow-md">
+                        <img 
+                            src="/icons/arrow-right-circle.svg" 
+                            alt="Scroll Right" 
+                            width={30} 
+                            className="cursor-pointer hover:opacity-80 transition-opacity"
+                            onClick={scrollRight}
+                        />
+                    </div>
                 </div>
             )}
             

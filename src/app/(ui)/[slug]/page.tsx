@@ -8,7 +8,6 @@ import { user } from "@/data/user";
 import { formatNums } from "@/utils/format.nums";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Metadata } from "next";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -93,7 +92,7 @@ export default function Page() {
                         <div>
                             {isMe && 
                                 <Link href={`/${user.slug}/edit`}>
-                                    <button className="cursor-pointer mt-5 bg-[#FF7A00] rounded-3xl font-semibold text-white w-40 h-13">Editar perfil</button>
+                                    <button className="cursor-pointer mt-5 bg-[#FF7A00] rounded-3xl font-semibold text-white w-40 h-12">Editar perfil</button>
                                 </Link>
                             }
                             {!isMe &&

@@ -1,40 +1,48 @@
 import { user } from "@/data/user";
+import { formatNums } from "@/utils/format.nums";
 import Link from "next/link";
 
 export const NavProfile = () => {
+    const isActive = true;
 
-    const formatFollowers = (count: number) => {
-        if (count >= 1_000_000) {
-            return (count / 1_000_000).toLocaleString('pt-BR', {
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 1,
-            }) + 'M';
-        }
 
-        if(count >= 1_000){
-            return (count / 1_000).toLocaleString('pt-BR', {
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 1,
-            }) + 'k';
-        }
+    // const formatFollowers = (count: number) => {
+    //     if (count >= 1_000_000) {
+    //         return (count / 1_000_000).toLocaleString('pt-BR', {
+    //             minimumFractionDigits: 0,
+    //             maximumFractionDigits: 1,
+    //         }) + 'M';
+    //     }
 
-        return count.toLocaleString('pt-BR');
-    }
+    //     if(count >= 1_000){
+    //         return (count / 1_000).toLocaleString('pt-BR', {
+    //             minimumFractionDigits: 0,
+    //             maximumFractionDigits: 1,
+    //         }) + 'k';
+    //     }
+
+    //     return count.toLocaleString('pt-BR');
+    // }
 
     return(
         <div className="flex flex-col justify-center items-center">
-            <div className="size-23 mr-2 rounded-full overflow-hidden">
-                <Link href={`/${user.slug}`}>
-                    <img 
-                        src={user.avatar}
-                        alt={user.name}
-                        className="size-full"
-                    />
-                </Link>
+            <div className="relative">
+                {isActive &&
+                    <div className="absolute bottom-0 right-3 bg-green-500 w-5 h-5 rounded-full"></div>
+                }
+                <div className="size-23 mr-2 rounded-full overflow-hidden">
+                    <Link href={`/${user.slug}`}>
+                        <img 
+                            src={user.avatar}
+                            alt={user.name}
+                            className="size-full"
+                        />
+                    </Link>
+                </div>
             </div>
             <div className="flex-1 flex justify-center flex-col items-center gap-1 mt-4 overflow-hidden">
                 <div className="flex justify-center flex-col items-center">
-                    <Link href={`/${user.slug}`} className="text-lg text-center justify-center flex items-center gap-1 font-semibold">
+                    <Link href={`/${user.slug}`} prefetch className="text-lg text-center justify-center flex items-center gap-1 font-semibold">
                         <p className="w-50 truncate">{user.name}</p>
                     </Link>
                     <div className="text-md font-medium opacity-60">@{user.slug}</div>
@@ -53,7 +61,7 @@ export const NavProfile = () => {
                         <p className="font-medium text-[14px] opacity-70">Posts</p>
                     </div>
                     <div className="flex flex-col items-center">
-                        <span className="text-[17px] font-semibold">{formatFollowers(user.followers)}</span>
+                        <span className="text-[17px] font-semibold">{formatNums(user.followers)}</span>
                         <p className="font-medium text-[14px] opacity-70">Seguidores</p>
                     </div>
                     <div className="flex flex-col items-center">

@@ -22,6 +22,7 @@ export const PostItem = ({ post }: Props) => {
     const [imageModalOpen, setImageModalOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [showRepostDiv, setShowRepostDiv] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -39,11 +40,15 @@ export const PostItem = ({ post }: Props) => {
 
     const handleRepost = () => {
         if (repost) {
+            setIsAnimating(false);
             setRepost(false);
             setRepostCount(prev => prev - 1);
+            setShowRepostDiv(false);
         } else {
             setRepost(true);
             setRepostCount(prev => prev + 1);
+            setShowRepostDiv(true);
+            setTimeout(() => setIsAnimating(true), 30);
         }
     }
 
@@ -62,7 +67,13 @@ export const PostItem = ({ post }: Props) => {
 
     return(
         <div className="">
-            <div className="bg-white p-5 flex gap-3 border border-neutral-200 drop-shadow-xs rounded-xl">
+            {showRepostDiv &&
+                <div className={`inline-flex gap-2 items-center px-4 bg-orange-500 h-10 rounded-sm transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-100' : 'opacity-0'}`}>
+                    <FontAwesomeIcon icon={faRepeat} className="size-[17px] text-white" />
+                    <p className="text-white font-semibold text-sm">{user.slug} repostou</p>
+                </div>
+            }
+            <div className="bg-white p-5 flex gap-3 border border-neutral-200 drop-shadow-xs">
                 <div>
                     <Link href={`/${post.user.slug}`}>
                         <img 

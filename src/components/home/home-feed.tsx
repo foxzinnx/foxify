@@ -3,7 +3,7 @@ import { PostItem } from "../post/post-item";
 
 export const HomeFeed = () => {
     return(
-        <div className="mt-3 space-y-1">
+        <div className="mt-3">
             <PostItem post={post}/>
             <PostItem post={post}/>
             <PostItem post={post}/>
