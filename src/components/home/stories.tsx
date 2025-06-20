@@ -57,7 +57,7 @@ export const Stories = () => {
     };
     
     return (
-        <div className="bg-white rounded-md py-5 relative border-b-2 pb-3 border-neutral-200/50">
+        <div className="bg-white rounded-md py-5 relative border-b pb-3 border-neutral-200/50">
             {canScrollLeft && (
                 <div className="hidden drop-shadow-md lg:flex absolute top-10 px-3 z-3">
                     <div className="bg-white rounded-full p-[3px] drop-shadow-md">
