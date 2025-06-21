@@ -1,5 +1,6 @@
 import { NavItem } from "@/components/nav/nav-item";
 import { NavProfile } from "@/components/nav/nav-profile";
+import { TrendingTopics } from "@/components/right-side/trendingTopics";
 import { Logo } from "@/components/ui/logo";
 import { user } from "@/data/user";
 import { ReactNode } from "react";
@@ -9,6 +10,7 @@ type Props = {
 }
 
 export default function Layout({ children }: Props) {
+    
     return(
         <main id="main-layout" className="rounded-2xl min-h-screen flex justify-center mx-auto max-w-7xl">
             <section id="left-side" className="bg-white rounded-lg hidden md:flex flex-col sticky top-0 h-screen w-93 px-8 border-r-2 border-neutral-200">
@@ -49,7 +51,9 @@ export default function Layout({ children }: Props) {
             <section id="children-section" className="flex-1 md:mx-auto max-w-full">
                 {children}
             </section>
-            <aside id="aside-right" className="bg-white rounded-lg hidden lg:flex flex-col gap-6 sticky top-0 h-screen w-96 px-8 py-6 border-l-2 border-neutral-200">DIREITA</aside>
+            <aside id="aside-right" className="bg-white rounded-lg hidden lg:flex flex-col gap-6 sticky top-0 h-screen w-96 px-8 py-6 border-l-2 border-neutral-200">
+                <TrendingTopics />
+            </aside>
         </main>
     );
 }
