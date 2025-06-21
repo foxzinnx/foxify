@@ -16,7 +16,7 @@ export const PostComposer = () => {
     
     const textarea = e.target;
     textarea.style.height = 'auto';
-    const newHeight = Math.max(96, textarea.scrollHeight); 
+    const newHeight = Math.max(50, textarea.scrollHeight); 
     textarea.style.height = newHeight + 'px';
     setTextareaHeight(newHeight + 'px');
   };
@@ -48,7 +48,7 @@ export const PostComposer = () => {
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder="O que você gostaria de compartilhar hoje?"
-            className="w-full min-h-[96px] p-4 resize-none border-none outline-none text-base placeholder-neutral-400 bg-transparent rounded-xl overflow-hidden"
+            className="w-full min-h-[50px] p-4 resize-none border-none outline-none text-base placeholder-neutral-400 bg-transparent rounded-xl overflow-hidden"
             maxLength={maxCharacters + 50}
             style={{ height: textareaHeight }}
             rows={1}
